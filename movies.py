@@ -14,9 +14,9 @@ from typing import List, Tuple
 
 movie_db: List[Tuple[str, str, int, List[str]]] = [
     (
-        "amarcord",  # title
-        "federico fellini",  # director
-        1974,  # year
+        "fortnite",  # title
+        "epic games",  # developer
+        2017,  # year
         [
             "magali noel",
             "bruno zanin",
