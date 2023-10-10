@@ -27,7 +27,7 @@ def get_title(movie: Tuple[str, str, int, List[str]]) -> str:
     return movie[0]
 
 
-def get_director(movie: Tuple[str, str, int, List[str]]) -> str:
+def get_publisher(movie: Tuple[str, str, int, List[str]]) -> str:
     return movie[1]
 
 
@@ -35,7 +35,7 @@ def get_year(movie: Tuple[str, str, int, List[str]]) -> int:
     return movie[2]
 
 
-def get_actors(movie: Tuple[str, str, int, List[str]]) -> List[str]:
+def get_tags(movie: Tuple[str, str, int, List[str]]) -> List[str]:
     return movie[3]
 
 
