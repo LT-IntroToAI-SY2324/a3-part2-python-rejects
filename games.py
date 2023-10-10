@@ -411,9 +411,9 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
         ],
     ),
     (
-        "local hero",
-        "bill forsyth",
-        1983,
+        "red dead redemption 2",
+        "rockstar",
+        2018,
         [
             "burt lancaster",
             "peter reigert",
@@ -423,16 +423,14 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
         ],
     ),
     (
-        "malcolm x",
-        "spike lee",
-        1992,
+        "red dead redemption",
+        "rockstar",
+        2010,
         [
-            "denzel washington",
-            "angela basset",
-            "albert hall",
-            "al freeman jr",
-            "delroy lindo",
-            "spike lee",
+            "open world",
+            "shooter",
+            "3d",
+            "western",
         ],
     )
 ]
