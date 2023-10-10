@@ -1,18 +1,18 @@
-# the content of the movie database is taken from the textbook Concrete Abstractions: An
+# the content of the games database is taken from the textbook Concrete Abstractions: An
 # Introduction to Computer Science Using Scheme, by Max Hailperin, Barbara Kaiser, and
 # Karl Knight, Copyright (c) 1998 by the authors. Full text is available for free at
 # http://www.gustavus.edu/+max/concrete-abstractions.html
 
 # the Scheme file, Revision 1.3 as of 2005/12/20 14:09:37, has been reformated for
 # Python. The original file is available as
-# http://www.gustavus.edu/academics/mcs/max/concabs/code/movie.scm
+# http://www.gustavus.edu/academics/mcs/max/concabs/code/games.scm
 
 # list of tuples w/ following format (the first tuple in the list is also annotated):
-# each tuple contains title, director, year and actors/actresses
+# each tuple contains title, director, year and tags/actresses
 # `[(title, director, year, [actress_one, actor_two, ...]), ...]`
 from typing import List, Tuple
 
-movie_db: List[Tuple[str, str, int, List[str]]] = [
+games_db: List[Tuple[str, str, int, List[str]]] = [
     (
         "fortnite",  # title
         "epic games",  # developer
@@ -22,7 +22,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "3D",
             "multiple players",
             "survival",
-        ],  # actors/actresses
+        ],  # tags/actresses
     ),
     (
         "mario kart 8 deluxe",

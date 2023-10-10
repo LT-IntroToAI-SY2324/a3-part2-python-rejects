@@ -1,42 +1,42 @@
 # Important variables:
-#     movie_db: list of 4-tuples (imported from movies.py)
+#     games_db: list of 4-tuples (imported from gamess.py)
 #     pa_list: list of pattern-action pairs (queries)
 #       pattern - strings with % and _ (not consecutive)
 #       action  - return list of strings
 
-# THINGS TO ASK THE MOVIE CHAT BOT:
-# what movies were made in _ (must be date, because we don't have location)
-# what movies were made between _ and _
-# what movies were made before _
-# what movies were made after _
+# THINGS TO ASK THE games CHAT BOT:
+# what gamess were made in _ (must be date, because we don't have location)
+# what gamess were made between _ and _
+# what gamess were made before _
+# what gamess were made after _
 # who directed %
-# who was the director of %
-# what movies were directed by %
+# who was the publisher of %
+# what gamess were directed by %
 # who acted in %
 # when was % made
-# in what movies did % appear
+# in what gamess did % appear
 # bye
 
-#  Include the movie database, named games_db
-from movies import games_db
+#  Include the games database, named games_db
+from games import games_db
 from match import match
 from typing import List, Tuple, Callable, Any
 
-# The projection functions, that give us access to certain parts of a "movie" (a tuple)
-def get_title(game: Tuple[str, str, int, List[str]]) -> str:
-    return movie[0]
+# The projection functions, that give us access to certain parts of a "games" (a tuple)
+def get_title(games: Tuple[str, str, int, List[str]]) -> str:
+    return games[0]
 
 
-def get_publisher(game: Tuple[str, str, int, List[str]]) -> str:
-    return movie[1]
+def get_publisher(games: Tuple[str, str, int, List[str]]) -> str:
+    return games[1]
 
 
-def get_year(movie: Tuple[str, str, int, List[str]]) -> int:
-    return movie[2]
+def get_year(games: Tuple[str, str, int, List[str]]) -> int:
+    return games[2]
 
 
-def get_tags(movie: Tuple[str, str, int, List[str]]) -> List[str]:
-    return movie[3]
+def get_tags(games: Tuple[str, str, int, List[str]]) -> List[str]:
+    return games[3]
 
 
 # Below are a set of actions. Each takes a list argument and returns a list of answers
@@ -45,158 +45,158 @@ def get_tags(movie: Tuple[str, str, int, List[str]]) -> List[str]:
 
 
 def title_by_year(matches: List[str]) -> List[str]:
-    """Finds all movies made in the passed in year
+    """Finds all gamess made in the passed in year
 
     Args:
         matches - a list of 1 string, just the year. Note that this year is passed as a
             string and should be converted to an int
 
     Returns:
-        a list of movie titles made in the passed in year
+        a list of games titles made in the passed in year
     """
     results = []
-    for movie in movie_db:
-        if int(matches[0]) == get_year(movie):
-            results.append(get_title(movie))
+    for games in games_db:
+        if int(matches[0]) == get_year(games):
+            results.append(get_title(games))
     return results
 ##hellooo
 
 
 def title_by_year_range(matches: List[str]) -> List[str]:
-    """Finds all movies made in the passed in year range
+    """Finds all gamess made in the passed in year range
 
     Args:
         matches - a list of 2 strings, the year beginning the range and the year ending
-            the range. For example, to get movies from 1991-1994 matches would look like
+            the range. For example, to get gamess from 1991-1994 matches would look like
             this - ["1991", "1994"] Note that these years are passed as strings and
             should be converted to ints.
 
     Returns:
-        a list of movie titles made during those years, inclusive (meaning if you pass
-        in ["1991", "1994"] you will get movies made in 1991, 1992, 1993 & 1994)
+        a list of games titles made during those years, inclusive (meaning if you pass
+        in ["1991", "1994"] you will get gamess made in 1991, 1992, 1993 & 1994)
     """
     results = []
-    for movie in movie_db:
-        if int(matches[0]) <= get_year(movie) <= int(matches[1]):
-            results.append(get_title(movie))
+    for games in games_db:
+        if int(matches[0]) <= get_year(games) <= int(matches[1]):
+            results.append(get_title(games))
     return results
 
 
 def title_before_year(matches: List[str]) -> List[str]:
-    """Finds all movies made before the passed in year
+    """Finds all gamess made before the passed in year
 
     Args:
         matches - a list of 1 string, just the year. Note that this year is passed as a
             string and should be converted to an int
 
     Returns:
-        a list of movie titles made before the passed in year, exclusive (meaning if you
-        pass in 1992 you won't get any movies made that year, only before)
+        a list of games titles made before the passed in year, exclusive (meaning if you
+        pass in 1992 you won't get any gamess made that year, only before)
     """
     results = []
-    for movie in movie_db:
-        if get_year(movie) < int(matches[0]):
-            results.append(get_title(movie))
+    for games in games_db:
+        if get_year(games) < int(matches[0]):
+            results.append(get_title(games))
     return results
 
 
 
 def title_after_year(matches: List[str]) -> List[str]:
-    """Finds all movies made after the passed in year
+    """Finds all gamess made after the passed in year
 
     Args:
         matches - a list of 1 string, just the year. Note that this year is passed as a
             string and should be converted to an int
 
     Returns:
-        a list of movie titles made after the passed in year, exclusive (meaning if you
-        pass in 1992 you won't get any movies made that year, only after)
+        a list of games titles made after the passed in year, exclusive (meaning if you
+        pass in 1992 you won't get any gamess made that year, only after)
     """
     results = []
-    for movie in movie_db:
-        if get_year(movie) > int(matches[0]):
-            results.append(get_title(movie))
+    for games in games_db:
+        if get_year(games) > int(matches[0]):
+            results.append(get_title(games))
     return results
 
 
-def director_by_title(matches: List[str]) -> List[str]:
-    """Finds director of movie based on title
+def publisher_by_title(matches: List[str]) -> List[str]:
+    """Finds publisher of games based on title
 
     Args:
         matches - a list of 1 string, just the title
 
     Returns:
-        a list of 1 string, the director of the movie
+        a list of 1 string, the publisher of the games
     """
     results = []
-    for movie in movie_db:
+    for games in games_db:
         
-        if get_title(movie) == (matches[0]):
-            results.append(get_director(movie))
+        if get_title(games) == (matches[0]):
+            results.append(get_publisher(games))
     return results
 
 
-def title_by_director(matches: List[str]) -> List[str]:
-    """Finds movies directed by the passed in director
+def title_by_publisher(matches: List[str]) -> List[str]:
+    """Finds gamess directed by the passed in publisher
 
     Args:
-        matches - a list of 1 string, just the director
+        matches - a list of 1 string, just the publisher
 
     Returns:
-        a list of movies titles directed by the passed in director
+        a list of gamess titles directed by the passed in publisher
     """
     results = []
-    for movie in movie_db:
-        if get_director(movie) == str(matches[0]):
-            results.append(get_title(movie))
+    for games in games_db:
+        if get_publisher(games) == str(matches[0]):
+            results.append(get_title(games))
     return results
 
 
-def actors_by_title(matches: List[str]) -> List[str]:
-    """Finds actors who acted in the passed in movie title
+def tags_by_title(matches: List[str]) -> List[str]:
+    """Finds tags who acted in the passed in games title
 
     Args:
-        matches - a list of 1 string, just the movie title
+        matches - a list of 1 string, just the games title
 
     Returns:
-        a list of actors who acted in the passed in title
+        a list of tags who acted in the passed in title
     """
     results = []
-    for movie in movie_db:
-        if get_title(movie) == (matches[0]):
-            results=(get_actors(movie))
+    for games in games_db:
+        if get_title(games) == (matches[0]):
+            results=(get_tags(games))
     return results
 
 
 def year_by_title(matches: List[str]) -> List[int]:
-    """Finds year of passed in movie title
+    """Finds year of passed in games title
 
     Args:
-        matches - a list of 1 string, just the movie title
+        matches - a list of 1 string, just the games title
 
     Returns:
-        a list of one item (an int), the year that the movie was made
+        a list of one item (an int), the year that the games was made
     """
     results = []
-    for movie in movie_db:
-        if get_title(movie) == str(matches[0]):
-            results.append(get_year(movie))
+    for games in games_db:
+        if get_title(games) == str(matches[0]):
+            results.append(get_year(games))
     return results
 
 
 def title_by_actor(matches: List[str]) -> List[str]:
-    """Finds titles of all movies that the given actor was in
+    """Finds titles of all gamess that the given actor was in
 
     Args:
         matches - a list of 1 string, just the actor
 
     Returns:
-        a list of movie titles that the actor acted in
+        a list of games titles that the actor acted in
     """
     results = []
-    for movie in movie_db:
-        if matches[0] in get_actors(movie):
-            results.append(get_title(movie))
+    for games in games_db:
+        if matches[0] in get_tags(games):
+            results.append(get_title(games))
     return results
 
 
@@ -208,18 +208,18 @@ def bye_action(dummy: List[str]) -> None:
 # The pattern-action list for the natural language query system A list of tuples of
 # pattern and action It must be declared here, after all of the function definitions
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("what movies were made in _"), title_by_year),
-    (str.split("what movies were made between _ and _"), title_by_year_range),
-    (str.split("what movies were made before _"), title_before_year),
-    (str.split("what movies were made after _"), title_after_year),
-    # note there are two valid patterns here two different ways to ask for the director
-    # of a movie
-    (str.split("who directed %"), director_by_title),
-    (str.split("who was the director of %"), director_by_title),
-    (str.split("what movies were directed by %"), title_by_director),
-    (str.split("who acted in %"), actors_by_title),
+    (str.split("what gamess were made in _"), title_by_year),
+    (str.split("what gamess were made between _ and _"), title_by_year_range),
+    (str.split("what gamess were made before _"), title_before_year),
+    (str.split("what gamess were made after _"), title_after_year),
+    # note there are two valid patterns here two different ways to ask for the publisher
+    # of a games
+    (str.split("who directed %"), publisher_by_title),
+    (str.split("who was the publisher of %"), publisher_by_title),
+    (str.split("what gamess were directed by %"), title_by_publisher),
+    (str.split("who acted in %"), tags_by_title),
     (str.split("when was % made"), year_by_title),
-    (str.split("in what movies did % appear"), title_by_actor),
+    (str.split("in what gamess did % appear"), title_by_actor),
     (["bye"], bye_action),
 ]
 
@@ -250,7 +250,7 @@ def query_loop() -> None:
     """The simple query loop. The try/except structure is to catch Ctrl-C or Ctrl-D
     characters and exit gracefully.
     """
-    print("Welcome to the movie database!\n")
+    print("Welcome to the games database!\n")
     while True:
         try:
             print()
