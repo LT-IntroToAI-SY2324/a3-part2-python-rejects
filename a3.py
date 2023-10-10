@@ -17,17 +17,17 @@
 # in what movies did % appear
 # bye
 
-#  Include the movie database, named movie_db
-from movies import movie_db
+#  Include the movie database, named games_db
+from movies import games_db
 from match import match
 from typing import List, Tuple, Callable, Any
 
 # The projection functions, that give us access to certain parts of a "movie" (a tuple)
-def get_title(movie: Tuple[str, str, int, List[str]]) -> str:
+def get_title(game: Tuple[str, str, int, List[str]]) -> str:
     return movie[0]
 
 
-def get_publisher(movie: Tuple[str, str, int, List[str]]) -> str:
+def get_publisher(game: Tuple[str, str, int, List[str]]) -> str:
     return movie[1]
 
 
