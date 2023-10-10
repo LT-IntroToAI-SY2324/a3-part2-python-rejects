@@ -18,14 +18,14 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
         "epic games",  # developer
         2017,  # year
         [
-            "magali noel",
-            "bruno zanin",
-            "pupella maggio",
-            "armando drancia",
+            "battle royale",
+            "3D",
+            "multiple players",
+            "survival",
         ],  # actors/actresses
     ),
     (
-        "the big easy",
+        "",
         "jim mcbride",
         1987,
         [
