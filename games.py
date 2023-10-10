@@ -14,35 +14,35 @@ from typing import List, Tuple
 
 movie_db: List[Tuple[str, str, int, List[str]]] = [
     (
-        "amarcord",  # title
-        "federico fellini",  # director
-        1974,  # year
+        "fortnite",  # title
+        "epic games",  # developer
+        2017,  # year
         [
-            "magali noel",
-            "bruno zanin",
-            "pupella maggio",
-            "armando drancia",
+            "battle royale",
+            "3D",
+            "multiple players",
+            "survival",
         ],  # actors/actresses
     ),
     (
-        "the big easy",
-        "jim mcbride",
-        1987,
+        "mario kart 8 deluxe",
+        "Nintendo",
+        2017,
         [
-            "dennis quaid",
-            "ellen barkin",
-            "ned beatty",
-            "lisa jane persky",
-            "john goodman",
-            "charles ludlam",
+            "racing",
+            "power ups",
+            "tracks",
+            "multi player",
+            "mario universe characters",
+            "motorbikes and gliders",
         ],
     ),
     (
-        "boyz n the hood",
-        "john singleton",
-        1991,
+        "minecraft",
+        "mojang studios",
+        2009,
         [
-            "cuba gooding jr.",
+            "block",
             "ice cube",
             "larry fishburne",
             "tyra ferrell",
