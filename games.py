@@ -411,11 +411,11 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         "rockstar",
         2018,
         [
-            "burt lancaster",
-            "peter reigert",
-            "peter capaldi",
-            "fulton mckay",
-            "denis lawson",
+            "open world",
+            "shooter",
+            "3d",
+            "western",
+            
         ],
     ),
     (
