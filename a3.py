@@ -208,18 +208,18 @@ def bye_action(dummy: List[str]) -> None:
 # The pattern-action list for the natural language query system A list of tuples of
 # pattern and action It must be declared here, after all of the function definitions
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("what gamess were made in _"), title_by_year),
-    (str.split("what gamess were made between _ and _"), title_by_year_range),
-    (str.split("what gamess were made before _"), title_before_year),
-    (str.split("what gamess were made after _"), title_after_year),
+    (str.split("what games were made in _"), title_by_year),
+    (str.split("what games were made between _ and _"), title_by_year_range),
+    (str.split("what games were made before _"), title_before_year),
+    (str.split("what games were made after _"), title_after_year),
     # note there are two valid patterns here two different ways to ask for the publisher
     # of a games
     (str.split("who directed %"), publisher_by_title),
     (str.split("who was the publisher of %"), publisher_by_title),
-    (str.split("what gamess were directed by %"), title_by_publisher),
+    (str.split("what games were directed by %"), title_by_publisher),
     (str.split("who acted in %"), tags_by_title),
     (str.split("when was % made"), year_by_title),
-    (str.split("in what gamess did % appear"), title_by_actor),
+    (str.split("in what games did % appear"), title_by_tags),
     (["bye"], bye_action),
 ]
 
