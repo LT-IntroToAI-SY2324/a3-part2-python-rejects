@@ -184,7 +184,7 @@ def year_by_title(matches: List[str]) -> List[int]:
     return results
 
 
-def title_by_actor(matches: List[str]) -> List[str]:
+def title_by_tags(matches: List[str]) -> List[str]:
     """Finds titles of all gamess that the given actor was in
 
     Args:
