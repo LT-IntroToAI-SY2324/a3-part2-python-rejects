@@ -117,7 +117,14 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
             "Tactical Shooter",
         ],
     ),
-     ("super mario odyssey", "nintendo", 2017, ["platformer, "3d", "adventure"]),
+    ("super mario odyssey",
+      "nintendo",
+        2017,
+        [
+            "platformer", 
+            "3d", 
+            "adventure"]
+    ),
     (
         "sonic the hedgehog",
         "sega",
