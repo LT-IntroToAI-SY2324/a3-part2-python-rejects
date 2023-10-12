@@ -139,7 +139,11 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         "nintendogs",
         "nintendo",
         2005,
-        ["2d", "retro", "chill"],
+        [
+            "2d", 
+            "retro", 
+            "chill",
+        ]
     ),
     (
         "pacman",
