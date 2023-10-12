@@ -217,9 +217,9 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("who directed %"), publisher_by_title),
     (str.split("who was the publisher of %"), publisher_by_title),
     (str.split("what games were directed by %"), title_by_publisher),
-    (str.split("who acted in %"), tags_by_title),
+    (str.split("what tags does % have"), tags_by_title),
     (str.split("when was % made"), year_by_title),
-    (str.split("in what games did % appear"), title_by_tags),
+    (str.split("what games involve %"), title_by_tags),
     (["bye"], bye_action),
 ]
 
