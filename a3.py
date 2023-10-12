@@ -214,7 +214,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what games were made after _"), title_after_year),
     # note there are two valid patterns here two different ways to ask for the publisher
     # of a games
-    (str.split("who directed %"), publisher_by_title),
+    (str.split("who published %"), publisher_by_title),
     (str.split("who was the publisher of %"), publisher_by_title),
     (str.split("what games were directed by %"), title_by_publisher),
     (str.split("what tags does % have"), tags_by_title),
