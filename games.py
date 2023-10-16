@@ -43,10 +43,8 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         2009,
         [
             "block",
-            "ice cube",
-            "larry fishburne",
-            "tyra ferrell",
-            "morris chestnut",
+            "survival",
+            "first person",
         ],
     ),
     (
