@@ -54,9 +54,9 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         [
             "3d",
             "first person",
-            "shooter",
+            "shooting",
             "survival",
-            "shooter",
+            "shooting",
         ],
     ),
     (
@@ -99,7 +99,8 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         "nintendo",
         2015,
         [
-            "third person shooter",
+            "third person", 
+            "shooting",
             "competition",
             "race",
             "colorful",
@@ -110,9 +111,9 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         "Riot Games",
         2020,
         [
-            "Shooter",
+            "shooting",
             "FPS",
-            "Tactical Shooter",
+            "Tactical shooting",
         ],
     ),
     ("super mario odyssey",
@@ -158,7 +159,7 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         "rockstar",
         2013,
         [
-            "shooter",
+            "shooting",
             "3d",
             "open world",
             "crime",
@@ -170,7 +171,7 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         2018,
         [
             "open world",
-            "shooter",
+            "shooting",
             "3d",
             "western",
             
@@ -182,7 +183,7 @@ games_db: List[Tuple[str, str, int, List[str]]] = [
         2010,
         [
             "open world",
-            "shooter",
+            "shooting",
             "3d",
             "western",
         ],
